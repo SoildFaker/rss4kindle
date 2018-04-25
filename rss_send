@@ -1,0 +1,4 @@
+#!/bin/bash
+book=$1
+send_to=$2
+/usr/bin/calibre-smtp -a /root/fetched/${book}.mobi -e TLS -u enbinli@outlook.com -p password -r smtp-mail.outlook.com --port 587 enbinli@outlook.com ${send_to} ''

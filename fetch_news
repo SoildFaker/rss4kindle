@@ -1,0 +1,5 @@
+#!/bin/bash
+book=$1
+send_to=$2
+/usr/bin/ebook-convert /root/recipes/${book}.recipe /root/fetched/${book}.mobi --output-profile kindle 1> /var/log/rss4kindle/fetch_${book}.log 2>/var/log/rss4kindle/fetch_${book}_err.log
+/usr/bin/rss_send ${book} ${send_to}
