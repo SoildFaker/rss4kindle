@@ -1,0 +1,32 @@
+#!/usr/bin/env python2
+# vim:fileencoding=utf-8
+from __future__ import unicode_literals, division, absolute_import, print_function
+from calibre.web.feeds.news import BasicNewsRecipe
+
+class RSS_Subscription(BasicNewsRecipe):
+    title          = 'RSS Subscription'
+    description    = u'RSS Subscription auto fetched.'
+    oldest_article = 7
+    max_articles_per_feed = 100
+    timeout        = 30
+    auto_cleanup   = True
+    encoding       = None
+
+    __author__     = "AutoFetch"
+    publisher      = "Tokyo_Server"
+    publication_type = "newspaper"
+
+    language       = "zh"
+    remove_empty_feeds = True
+
+    feeds          = [
+        ('知乎日报', 'http://feeds.feedburner.com/zhihu-daily'),
+        ('果壳谣言粉碎机', 'http://feedmaker.kindle4rss.com/feeds/fact.guokr.com.xml'),
+        ('科学松鼠会', 'http://songshuhui.net/feed'),
+        ('果壳物理', 'http://feedmaker.kindle4rss.com/feeds/subject-physics.guokr.com.xml'),
+        ('果壳数学', 'http://feedmaker.kindle4rss.com/feeds/subject-math.guokr.com.xml'),
+    ]
+
+    remove_tags = [
+    ]
+
